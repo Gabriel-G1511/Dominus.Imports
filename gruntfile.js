@@ -1,11 +1,12 @@
 module.exports = function (grunt) {
+
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
         less: {
             development: {
                 files: {
-                    'dist/css/main.css': 'src/main.less'
+                    "dist/css/main.css": "src/main.less"
                 }
             }
         },
@@ -13,34 +14,25 @@ module.exports = function (grunt) {
         cssmin: {
             target: {
                 files: {
-                    'dist/css/main.min.css': ['dist/css/main.css']
+                    "dist/css/main.min.css": ["dist/css/main.css"]
                 }
             }
         },
 
-        copy: {
-            main: {
-                files: [
-                    { expand: true, cwd: './', src: ['index.html'], dest: 'dist/' },
-                    { expand: true, cwd: 'src/', src: ['img/**'], dest: 'dist/' }
-                ]
-            }
-        },
-
-        mkdir: {
-            all: {
+        watch: {
+            styles: {
+                files: ["src/**/*.less"],
+                tasks: ["less", "cssmin"],
                 options: {
-                    create: ['dist', 'dist/css']
-                }
-            }
-        }
+                    spawn: false,
+                },
+            },
+        },
     });
 
-    grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-mkdir');
+    grunt.loadNpmTasks("grunt-contrib-less");
+    grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-contrib-watch");
 
-    grunt.registerTask('default', ['mkdir', 'less', 'cssmin', 'copy']);
-    grunt.registerTask('build', ['mkdir', 'less', 'cssmin', 'copy']);
+    grunt.registerTask("default", ["less", "cssmin"]);
 };
