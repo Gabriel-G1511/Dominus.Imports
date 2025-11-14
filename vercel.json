@@ -6,4 +6,4 @@
     { "src": "src/img/**/*", "use": "@vercel/static" }
 ]
 }
-//só comentando
+
