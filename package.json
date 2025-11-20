@@ -2,15 +2,19 @@
   "name": "dominus-imports",
   "version": "1.0.0",
   "description": "Site institucional da Dominus Imports",
+
   "scripts": {
-    "build": "grunt less && grunt cssmin && mkdir -p dist/css dist/src && cp index.html dist/index.html && cp -r src/img dist/src/img && cp dist/css/main.min.css dist/css/main.min.css",
+    "build": "grunt less && grunt cssmin && shx mkdir -p dist/css dist/img && shx cp index.html dist/ && shx cp -r src/img/* dist/img",
     "start": "grunt watch"
   },
+
   "dependencies": {
     "bootstrap": "^5.3.8",
     "less": "^4.4.2",
-    "minify": "^14.1.0"
+    "minify": "^14.1.0",
+    "shx": "^0.3.4"
   },
+
   "devDependencies": {
     "grunt": "^1.6.1",
     "grunt-contrib-cssmin": "^5.0.0",
