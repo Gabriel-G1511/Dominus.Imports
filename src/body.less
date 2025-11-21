@@ -1,0 +1,39 @@
+@import "variaveis.less";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: @corTexto;
+    background-color: @corFundo;
+    overflow-x: hidden;
+}
+
+// ========================================
+// TIPOGRAFIA PREMIUM
+// ========================================
+h1, h2, h3, .Marca {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    color: @corDestaque;
+    font-weight: 700;
+}
+
+
+@keyframes shine {
+    0%, 100% {
+        filter: drop-shadow(2px 2px 1px rgba(212, 175, 55, 0.3))
+                drop-shadow(0px 0px 8px rgba(212, 175, 55, 0.4))
+                drop-shadow(0px 4px 12px rgba(184, 148, 30, 0.25));
+    }
+    50% {
+        filter: drop-shadow(2px 2px 1px rgba(212, 175, 55, 0.5))
+                drop-shadow(0px 0px 15px rgba(212, 175, 55, 0.6))
+                drop-shadow(0px 4px 20px rgba(184, 148, 30, 0.4));
+    }
+}
+

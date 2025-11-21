@@ -1,0 +1,26 @@
+@import "variaveis.less";
+// ========================================
+// DROPDOWN MENU DOURADO
+// ========================================
+.dropdown-menu {
+    background-color: @corFundo;
+    border: 2px solid @corDestaque !important;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+    padding: 0.5rem 0;
+
+    a.dropdown-item {
+        color: @corTexto;
+        padding: 0.7rem 1.5rem;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        
+        &:hover {
+            background: linear-gradient(to right, 
+                        fade(@corDestaque, 20%), 
+                        fade(@corDestaque2, 10%));
+            color: @corDestaque3;
+            padding-left: 2rem;
+        }
+    }
+}

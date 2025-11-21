@@ -1,0 +1,342 @@
+@import "variaveis.less";
+
+// ========================================
+// RESPONSIVIDADE DOMINUS IMPORTS
+// ========================================
+
+// -------------------------
+// MOBILE FIRST - Extra Pequenos (até 575px)
+// -------------------------
+@media (max-width: @screen-xs) {
+
+    // NAVBAR
+    .navbar {
+        padding: 0.8rem 1rem;
+
+        .navbar-brand {
+            gap: 8px;
+            font-size: 1.1rem;
+
+            .logo-dominus {
+                height: 35px;
+            }
+        }
+
+        .navbar-collapse {
+            margin-top: 1rem;
+            background: @corFundo;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: @sombraCard;
+        }
+
+        .navbar-nav {
+            .nav-link {
+                padding: 0.8rem 0;
+                text-align: center;
+                font-size: 1rem;
+                border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+
+        form {
+            margin-top: 1rem;
+        }
+    }
+
+    // SOBRE NÓS
+    .sobre-nos {
+        padding: 3rem 1.5rem;
+        margin-top: 70px;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        border-radius: 15px;
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        em {
+            font-size: 1rem;
+        }
+    }
+
+    // CAROUSEL
+    .carousel {
+        margin-top: 1rem;
+
+        .carousel-inner {
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-item img {
+            height: 250px;
+            object-fit: cover;
+        }
+    }
+
+    // PRODUTOS
+    .container.my-5 {
+        padding: 0 1rem;
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            box-shadow: @sombraCard;
+            transition: @transicaoPadrao;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: @sombraHover;
+            }
+
+            .card-img-top {
+                height: 180px !important;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.6rem;
+            }
+        }
+    }
+
+    // FOOTER
+    .footer {
+        padding: 2rem 1rem;
+
+        .col-md-4 {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h5, h6 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        p, a {
+            font-size: 0.9rem;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+        }
+    }
+}
+
+// -------------------------
+// Pequenos - Tablets Portrait (576px – 767px)
+// -------------------------
+@media (min-width: 576px) and (max-width: @screen-sm) {
+
+    .navbar {
+        .navbar-brand {
+            font-size: 1.3rem;
+
+            .logo-dominus {
+                height: 40px;
+            }
+        }
+    }
+
+    .sobre-nos {
+        padding: 4rem 2rem;
+        margin-top: 75px;
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+        }
+    }
+
+    .carousel-item img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .container.my-5 {
+        .row {
+            row-gap: 2rem;
+        }
+
+        .card {
+            .card-img-top {
+                height: 200px !important;
+            }
+        }
+    }
+
+    .footer {
+        .col-md-4 {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+// -------------------------
+// Médios - Tablets Landscape (768px – 991px)
+// -------------------------
+@media (min-width: 768px) and (max-width: @screen-md) {
+
+    .navbar {
+        padding: 1rem 1.5rem;
+
+        .navbar-brand {
+            .logo-dominus {
+                height: 45px;
+            }
+        }
+
+        .navbar-nav {
+            gap: 1rem;
+
+            .nav-link {
+                font-size: 0.95rem;
+            }
+        }
+    }
+
+    .sobre-nos {
+        padding: 4.5rem 2.5rem;
+
+        h2 {
+            font-size: 2.2rem;
+        }
+    }
+
+    .carousel-item img {
+        height: 350px;
+        object-fit: cover;
+    }
+
+    .container.my-5 {
+        .card {
+            .card-img-top {
+                height: 200px !important;
+            }
+        }
+    }
+}
+
+// -------------------------
+// Grandes - Desktop (992px – 1199px)
+// -------------------------
+@media (min-width: 992px) and (max-width: @screen-lg) {
+
+    .navbar {
+        .navbar-brand {
+            .logo-dominus {
+                height: 48px;
+            }
+        }
+    }
+
+    .sobre-nos {
+        padding: 5rem 3rem;
+
+        h2 {
+            font-size: 2.3rem;
+        }
+    }
+
+    .carousel-item img {
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+// -------------------------
+// Extra Grandes - Desktop Grande (1200px+)
+// -------------------------
+@media (min-width: @screen-xl) {
+
+    .navbar {
+        padding: 1rem 3rem;
+
+        .navbar-brand {
+            .logo-dominus {
+                height: 50px;
+            }
+        }
+    }
+
+    .sobre-nos {
+        padding: 5rem 4rem;
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .carousel-item img {
+        height: 500px;
+        object-fit: cover;
+    }
+
+    .container.my-5 {
+        max-width: 1400px;
+    }
+}
+
+// -------------------------
+// AJUSTES GERAIS PARA TODOS
+// -------------------------
+
+// Garantir que elementos não quebrem
+* {
+    box-sizing: border-box;
+}
+
+// Imagens responsivas
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Containers
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+// Tipografia responsiva
+html {
+    font-size: 16px;
+
+    @media (max-width: @screen-xs) {
+        font-size: 14px;
+    }
+
+    @media (min-width: @screen-xl) {
+        font-size: 18px;
+    }
+}

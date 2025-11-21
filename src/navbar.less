@@ -1,0 +1,130 @@
+@import "variaveis.less";
+
+// ========================================
+// NAVBAR
+// ========================================
+.navbar {
+    padding: 1rem 2rem;
+    background: @corFundo;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+    transition: @transicaoPadrao;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+
+    &.scrolled {
+        padding: 0.5rem 2rem;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: @fonteDisplay;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: @corDestaque3;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: @transicaoPadrao;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+
+        .logo-dominus {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            transition: @transicaoPadrao;
+        }
+
+        .nome-dominus {
+            background: @gradienteDourado;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+
+    .navbar-nav {
+        gap: 1.5rem;
+
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            color: @corTexto !important;
+            padding: 0.5rem 0.8rem;
+            border-bottom: 2px solid transparent;
+            transition: @transicaoPadrao;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: @gradienteDourado;
+                transition: @transicaoPadrao;
+                transform: translateX(-50%);
+            }
+
+            &:hover {
+                color: @corDestaque3 !important;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+
+            &.active {
+                color: @corDestaque3 !important;
+                font-weight: 600;
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .navbar-toggler {
+        border: 2px solid @corDestaque;
+        
+        &:focus {
+            box-shadow: 0 0 0 0.2rem rgba(212, 175, 55, 0.25);
+        }
+    }
+
+    .dropdown-menu {
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: @sombraCard;
+        
+        .dropdown-item {
+            transition: @transicaoPadrao;
+            
+            &:hover {
+                background: @gradienteDouradoSutil;
+                color: @corDestaque3;
+                padding-left: 1.5rem;
+            }
+        }
+    }
+
+    .btn-outline-warning {
+        border-color: @corDestaque;
+        color: @corDestaque;
+        font-weight: 600;
+        
+        &:hover {
+            background: @gradienteDourado;
+            border-color: @corDestaque;
+            color: @corFundo;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+        }
+    }
+}

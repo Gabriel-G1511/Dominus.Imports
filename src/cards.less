@@ -1,0 +1,106 @@
+@import "variaveis.less";
+// ========================================
+// CARDS DE PRODUTOS PREMIUM
+// ========================================
+.card {
+    border: 2px solid fade(@corDestaque, 30%) !important;
+    border-radius: 15px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, 
+                @corFundo 0%, 
+                fade(@corDestaque2, 15%) 100%);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    
+    // Borda dourada brilhante
+    &::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: @gradienteDourado;
+        border-radius: 15px;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.4s ease;
+    }
+    
+    &:hover {
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 15px 50px rgba(212, 175, 55, 0.35),
+                    0 0 0 3px @corDestaque2;
+        border-color: @corDestaque !important;
+        
+        &::before {
+            opacity: 0.3;
+        }
+    }
+    
+    .card-img-top {
+        background: linear-gradient(135deg, 
+                    fade(@corDestaque2, 20%), 
+                    fade(@corDestaque, 10%));
+        transition: all 0.4s ease;
+        padding: 2rem;
+    }
+    
+    &:hover .card-img-top {
+        transform: scale(1.08) rotate(2deg);
+    }
+    
+    .card-title {
+        color: @corDestaque3;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .card-text {
+        color: @corTextoClaro;
+    }
+    
+    .btn-outline-dark {
+        border: 2px solid @corDestaque;
+        background: transparent;
+        color: @corDestaque;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        border-radius: 25px;
+        padding: 0.6rem 1.5rem;
+        
+        &:hover {
+            background: @gradienteDourado;
+            border-color: @corDestaque3;
+            color: @corAzulEscuro;
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+        }
+    }
+}
+
+// Animação de entrada
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    animation: fadeInUp 0.8s ease-out backwards;
+    
+    &:nth-child(1) { animation-delay: 0.1s; }
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.3s; }
+    &:nth-child(4) { animation-delay: 0.4s; }
+}

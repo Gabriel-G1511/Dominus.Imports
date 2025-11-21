@@ -1,0 +1,80 @@
+@import "variaveis.less";
+// ========================================
+// FOOTER ELEGANTE
+// ========================================
+.footer {
+    background: linear-gradient(to bottom, 
+                @corAzulEscuro 0%, 
+                darken(@corAzulEscuro, 5%) 100%);
+    color: @corDestaque2;
+    border-top: 3px solid @corDestaque;
+    box-shadow: 0 -5px 20px rgba(212, 175, 55, 0.2);
+    padding: 3rem 0 1rem;
+    
+    h5, h6 {
+        color: @corDestaque;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+    }
+    
+    a {
+        color: @corDestaque2;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        position: relative;
+        
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: @gradienteDourado;
+            transition: width 0.3s ease;
+        }
+        
+        &:hover {
+            color: @corDestaque;
+            
+            &::after {
+                width: 100%;
+            }
+        }
+    }
+    
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: fade(@corDestaque, 15%);
+        border: 2px solid @corDestaque;
+        border-radius: 50%;
+        margin-right: 1rem;
+        font-size: 1.3rem;
+        transition: all 0.3s ease;
+        
+        &::after {
+            display: none;
+        }
+        
+        &:hover {
+            background: @gradienteDourado;
+            color: @corAzulEscuro;
+            transform: translateY(-5px) rotate(360deg);
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
+        }
+    }
+    
+    .border-top {
+        border-color: fade(@corDestaque, 30%) !important;
+        margin-top: 2rem;
+    }
+    
+    small {
+        color: fade(@corDestaque2, 70%);
+    }
+}

@@ -1,0 +1,92 @@
+@import "variaveis.less";
+// ========================================
+// HERO SECTION DOURADA
+// ========================================
+.hero-section {
+    height: 65vh;
+    background: @corAzulEscuro;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    // Overlay com padrão dourado
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: 
+            radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%),
+            radial-gradient(circle at 80% 80%, rgba(244, 228, 193, 0.1) 0%, transparent 50%);
+        z-index: 1;
+    }
+    
+    // Padrão de pontos dourados animado
+    &::after {
+        content: '';
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background-image: 
+            radial-gradient(circle, rgba(212, 175, 55, 0.15) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: move 30s linear infinite;
+        z-index: 1;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: @corFundo;
+        padding: 2rem;
+    }
+    
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 1.5rem;
+        background: @gradienteDourado;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        filter: drop-shadow(0 4px 20px rgba(177, 144, 37, 0.4));
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: clamp(1rem, 2vw, 1.3rem);
+        margin-bottom: 2.5rem;
+        color: @corDestaque2;
+        font-weight: 300;
+        letter-spacing: 1px;
+    }
+    
+    .btn-hero {
+        background: @gradienteDourado;
+        color: @corAzulEscuro;
+        padding: 14px 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: 3px solid @corDestaque3;
+        border-radius: 50px;
+        letter-spacing: 0,5px;
+        transition: all 0.4s ease;
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        
+        &:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+            background: @gradienteDouradoEscuro;
+        }
+        
+        &:active {
+            transform: translateY(-2px) scale(1.03);
+        }
+    }
+}

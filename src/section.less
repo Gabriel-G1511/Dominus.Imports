@@ -1,0 +1,50 @@
+@import "variaveis.less";
+
+// ========================================
+// SEÇÕES COM PADRÃO ALTERNADO
+// ========================================
+section {
+    padding: 5rem 0;
+    
+    &:nth-child(even) {
+        background: linear-gradient(to bottom, 
+                    @corFundo, 
+                    fade(@corDestaque2, 8%), 
+                    @corFundo);
+    }
+}
+
+// ========================================
+// TÍTULOS DE SEÇÃO COM DETALHE DOURADO
+// ========================================
+h2 {
+    position: relative;
+    padding-bottom: 1.5rem;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 120px;
+        height: 4px;
+        background: @gradienteDourado;
+        border-radius: 2px;
+        box-shadow: 0 3px 10px rgba(212, 175, 55, 0.5);
+    }
+    
+    // Detalhe lateral
+    &::before {
+        content: '◆';
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        transform: translateX(-50%);
+        color: @corDestaque;
+        font-size: 0.8rem;
+    }
+}
