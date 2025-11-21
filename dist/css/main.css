@@ -418,8 +418,8 @@ h3,
   transform: scale(1.02);
 }
 .navbar .navbar-brand .logo-dominus {
-  height: 50px;
-  width: auto;
+  height: 100px !important;
+  width: auto !important;
   object-fit: contain;
   transition: all 0.3s ease;
 }
@@ -807,7 +807,7 @@ h2::before {
   display: block;
   text-align: center;
   font-size: 1.15rem;
-  color: #F4E4C1;
+  color: #D4AF37;
   margin-top: 2.5rem;
   font-style: italic;
   font-weight: 500;
